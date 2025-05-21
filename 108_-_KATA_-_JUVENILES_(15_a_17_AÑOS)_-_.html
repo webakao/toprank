@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking - 108 - KATA - JUVENILES (15 a 17 AÑOS) - MIXTO - HASTA 5°KYU</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; background: #f4f4f4; }
+        h1 { text-align: center; color: #222; }
+        .filters { margin-bottom: 1rem; }
+        table { border-collapse: collapse; width: 100%; background: white; }
+        th, td { border: 1px solid #999; padding: 8px; text-align: center; }
+        th { background-color: #eee; }
+        a { text-decoration: none; color: #0066cc; }
+        select { margin: 0 5px; padding: 3px; }
+    </style>
+</head>
+<body>
+    <h1>108 - KATA - JUVENILES (15 a 17 AÑOS) - MIXTO - HASTA 5°KYU</h1>
+    <div class="filters">
+        Filtrar por torneo:
+        <select id="torneoFilter">
+            <option value="">Todos</option>
+            
+            <option value="PUNTOS">PUNTOS</option>
+            
+            <option value="PUNTOS">PUNTOS</option>
+            
+            <option value="PUNTOS">PUNTOS</option>
+            
+            <option value="PUNTOS">PUNTOS</option>
+            
+            <option value="PUNTOS">PUNTOS</option>
+            
+            <option value="PUNTOS">PUNTOS</option>
+            
+            <option value="PUNTOS">PUNTOS</option>
+            
+        </select>
+    </div>
+    <table id="rankingTable">
+        <thead>
+            <tr>
+                <th>Deportista</th>
+                <th>Escuela</th>
+                
+                <th data-torneo="PUNTOS">PUNTOS</th>
+                
+                <th data-torneo="PUNTOS">PUNTOS</th>
+                
+                <th data-torneo="PUNTOS">PUNTOS</th>
+                
+                <th data-torneo="PUNTOS">PUNTOS</th>
+                
+                <th data-torneo="PUNTOS">PUNTOS</th>
+                
+                <th data-torneo="PUNTOS">PUNTOS</th>
+                
+                <th data-torneo="PUNTOS">PUNTOS</th>
+                
+                <th>Puntaje Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>Alessia Tortorella</td>
+                <td></td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>Martin Sanchez</td>
+                <td></td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>Adrian Ruiz</td>
+                <td></td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td data-torneo="PUNTOS">nan</td>
+                
+                <td></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <script>
+        const filter = document.getElementById('torneoFilter');
+        filter.addEventListener('change', function () {
+            const torneo = this.value;
+            const headers = document.querySelectorAll('th[data-torneo]');
+            const rows = document.querySelectorAll('tbody tr');
+            headers.forEach(th => th.style.display = (!torneo || th.dataset.torneo === torneo) ? '' : 'none');
+            rows.forEach(row => {
+                row.querySelectorAll('td[data-torneo]').forEach(td => {
+                    td.style.display = (!torneo || td.dataset.torneo === torneo) ? '' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
